@@ -7,12 +7,13 @@ import java.io.IOException;
 public class SequenceTools {
 
     public static boolean writeToFile(
-            FibonacciGenerator generator,
+            ICalc generator,
             int from, int to,
             String fileName) {
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
-            for (int i = from; i <= to; i++) {
+            BufferedWriter writer
+                    = new BufferedWriter(new FileWriter(fileName));
+            for (int i = from; i < to; i++) {
                 writer.write(generator.getTerm(i) + "\n");
             }
             writer.close();
